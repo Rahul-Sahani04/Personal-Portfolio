@@ -1,38 +1,248 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Raleway:ital,wght@1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
+@import 'animate.css';
+
+.heading-text {
+  font-size: 42px;
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Poppins", sans-serif;
   text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Reset some default styles */
+* {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #03001c;
+}
+.project-tile-anim {
+  opacity: 0;
+  position: relative;
+}
+.visible {
+  opacity: 1;
+}
+.project-tile img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Global styles */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1c001c;
+  padding: 10px 0;
+  z-index: 3;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+nav a:hover {
+  text-shadow: grey 3px 3px 2px;
+}
+
+#welcome-section {
+  height: 100vh;
+  width: 100dwh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: transparent;
+  /* background-color: #000;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%); */
+}
+
+#welcome-section h2 {
+  font-size: 28px;
+  color: #be3144;
+  font-family: "Raleway", sans-serif;
+}
+
+.project-contain {
+  background-color: #0f2350;
+  height: fit-content;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 90dvw;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.main-title {
+  max-width: 640px;
+  font-family: "Poppins", sans-serif;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid #fff;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  transition: all 500ms ease-in-out;
+}
+
+.project-tile {
+  margin-bottom: 40px;
+  transition: all 500ms ease-in-out;
+}
+
+.project-tile h2 {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.project-tile p {
+  opacity: 0;
+  color: orange;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.project-tile:hover p {
+  transition: all 300ms ease-in-out;
+  opacity: 100;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  transition: all 300ms ease-in-out;
+  scale: 1.1;
+  z-index: 1;
+}
+
+.project-image {
+  height: 20dvh;
+  width: 60dvw;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.footer {
+  height: 15dvh;
+  width: 100dwh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+}
+
+@media only screen and (max-width: 780px) {
+  .project-image {
+    width: 100dvw;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
   }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    /*     color: #fccaff;
+      text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+        0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+      0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    /*     color: #fccaff;
+      text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+        0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+      0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+.welcome-section-wrapper {
+  position: relative;
+}
+
+/* Set the ShootingStars component as the background of the div */
+.welcome-section-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

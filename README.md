@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-![Portfolio Preview](https://link-to-your-preview-image)
+![Portfolio Preview](https://yourimageshare.com/ib/qh5miTIVec.webp)
 
 ## Description
 
@@ -38,7 +38,7 @@ To set up the project locally, follow these steps:
 1. Clone this repository to your local machine using the following command:
 
 ``` bash
-git clone https://github.com/your-username/personal-portfolio.git
+git clone https://github.com/Rahul-Sahani04/Personal-Portfolio/.git
 ```
 
 ## Navigate to the project directory:

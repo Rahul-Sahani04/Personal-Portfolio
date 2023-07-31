@@ -1,7 +1,5 @@
 # Personal Portfolio
 
-![Portfolio Preview](https://yourimageshare.com/ib/qh5miTIVec.webp)
-
 ## Description
 
 Welcome to my personal portfolio! This project showcases the various projects I have worked on, highlighting my skills and accomplishments as a developer. The portfolio website is designed to be beautiful, simple, and user-friendly, providing visitors with an easy-to-navigate experience.
@@ -21,7 +19,7 @@ Check out the live version of the portfolio [here](https://personal-portfolio-rs
 
 ## Preview
 
-Include some screenshots, GIFs, or a link to a video that showcases your portfolio website. (If you don't have any preview images yet, you can add them later and update this section.)
+![Portfolio Preview](https://yourimageshare.com/ib/qh5miTIVec.webp)
 
 ## Features
 

@@ -61,8 +61,8 @@ const ShootingStar = styled.div`
   background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
   border-radius: 999px;
   filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-  animation: ${tailAnimation} ${({ shootingTime }) => shootingTime} ease-in-out infinite,
-             ${shootingAnimation} ${({ shootingTime }) => shootingTime} ease-in-out infinite;
+  animation: ${tailAnimation} ${({ shootingtime }) => shootingtime} ease-in-out infinite,
+             ${shootingAnimation} ${({ shootingtime }) => shootingtime} ease-in-out infinite;
   
   &::before,
   &::after {
@@ -74,7 +74,7 @@ const ShootingStar = styled.div`
     background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
     transform: translateX(50%) rotateZ(45deg);
     border-radius: 100%;
-    animation: ${shiningAnimation} ${({ shootingTime }) => shootingTime} ease-in-out infinite;
+    animation: ${shiningAnimation} ${({ shootingtime }) => shootingtime} ease-in-out infinite;
   }
 
   &::after {
@@ -83,8 +83,8 @@ const ShootingStar = styled.div`
 
   &:nth-child(${({ i }) => i}) {
     animation-delay: ${({ delay }) => delay};
-    top: calc(50% - ${({ randomTop }) => randomTop}px);
-    left: calc(50% - ${({ randomLeft }) => randomLeft}px);
+    top: calc(50% - ${({ randomtop }) => randomtop}px);
+    left: calc(50% - ${({ randomleft }) => randomleft}px);
     &::before,
     &::after {
       animation-delay: ${({ delay }) => delay};
@@ -93,24 +93,27 @@ const ShootingStar = styled.div`
 `;
 
 const ShootingStars = () => {
-    const shootingTime = '3000ms';
+    const shootingtime = '3000ms';
 
     const generateRandomNumber = (min, max) => Math.random() * (max - min) + min;
 
     const shootingStars = Array.from({ length: 20 }).map((_, i) => {
         const delay = generateRandomNumber(0, 9999) + 'ms';
-        const randomTop = generateRandomNumber(-200, 200);
-        const randomLeft = generateRandomNumber(0, 300);
+        const randomtop = generateRandomNumber(-200, 200);
+        const randomleft = generateRandomNumber(0, 300);
         return (
-            <ShootingStar key={i} i={i + 1} delay={delay} randomTop={randomTop} randomLeft={randomLeft} shootingTime={shootingTime} />
+            <ShootingStar key={i} i={i + 1} delay={delay} randomtop={randomtop} randomleft={randomleft} shootingtime={shootingtime} />
         );
     });
 
-    return (
-        <Night>
-            {shootingStars}
-        </Night>
-    );
-};
+    const isPhone = window.innerWidth <= 600;
+
+    // Render ShootingStars component only if it's not a phone
+    return !isPhone ? (
+      <Night>
+        {shootingStars}
+      </Night>
+    ) : null;
+  };
 
 export default ShootingStars;
